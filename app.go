@@ -2,7 +2,9 @@ package main
 
 import (
 	"context"
-	"fmt"
+	"encoding/json"
+	"os"
+	"todo/backend/models"
 )
 
 // App struct
@@ -21,7 +23,23 @@ func (a *App) startup(ctx context.Context) {
 	a.ctx = ctx
 }
 
-// Greet returns a greeting for the given name
-func (a *App) Greet(name string) string {
-	return fmt.Sprintf("Hello %s, It's show time!", name)
+func (a *App) SaveTodos(todos []models.Todo) error {
+	data, err := json.Marshal(todos)
+	if err != nil {
+		return err
+	}
+	return os.WriteFile("todos.json", data, 0644)
+}
+
+func (a *App) LoadTodos() ([]models.Todo, error) {
+	var todos []models.Todo
+	data, err := os.ReadFile("todos.json")
+	if err != nil {
+		if os.IsNotExist(err) {
+			return []models.Todo{}, nil
+		}
+		return nil, err
+	}
+	err = json.Unmarshal(data, &todos)
+	return todos, err
 }
