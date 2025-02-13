@@ -85,7 +85,7 @@ const App: React.FC = () => {
                     className="todo-input"
                 />
                 <button onClick={handleAddTodo} className="todo-button">
-                    Add models.Todo
+                    Add Todo
                 </button>
             </div>
 
