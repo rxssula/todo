@@ -1,19 +1,14 @@
-# README
+# Todo
 
-## About
+## Как запустить проект
 
-This is the official Wails React-TS template.
+С помощью `git clone`
+![starting state](image.png)
 
-You can configure the project by editing `wails.json`. More information about the project settings can be found
-here: https://wails.io/docs/reference/project-config
+![toggle todo](image-1.png)
 
-## Live Development
+![add todo](image-2.png)
 
-To run in live development mode, run `wails dev` in the project directory. This will run a Vite development
-server that will provide very fast hot reload of your frontend changes. If you want to develop in a browser
-and have access to your Go methods, there is also a dev server that runs on http://localhost:34115. Connect
-to this in your browser, and you can call your Go code from devtools.
+![todo was added](image-3.png)
 
-## Building
-
-To build a redistributable, production mode package, use `wails build`.
+![todo was deleted](image-4.png)

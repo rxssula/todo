@@ -2,7 +2,7 @@
   {
     "id": 1,
     "text": "asdfasf",
-    "completed": false,
+    "completed": true,
     "createdAt": "2025-02-13 16:33:07.078099 +0500 +05 m=+6.758632543"
   }
 ]
